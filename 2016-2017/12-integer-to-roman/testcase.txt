@@ -1,0 +1,13 @@
+1
+3999
+1564
+245
+690
+
+output:
+
+"I"
+"MMMCMXCIX"
+"MDLXIV"
+"CCXLV"
+"DCXC"
