@@ -14,19 +14,35 @@ func threeSum(nums []int) [][]int {
         for _, idx := range(idxArray) {
             result = append(result, []int{nums[i], nums[idx[0]],nums[idx[1]]})
         }
-        if i+1 < n && nums[i+1] == nums[i] {
-            for i+1 < n && nums[i+1] == nums[i] {
-                i++
-            }
-            i++
-        } else {
-            i++
-        }
+        i = increase(i, nums)
     }
     return result
 }
 
-func increase(i int, )
+func increase(i int, nums []int) int {
+    n := len(nums)
+    if i+1 < n && nums[i+1] == nums[i] {
+        for i+1 < n && nums[i+1] == nums[i] {
+            i++
+        }
+        i++
+    } else {
+        i++
+    }
+    return i
+}
+
+func decrease(j int, nums []int) int {
+    if j >0 && nums[j] == nums[j-1] {
+        for j>0 && nums[j] == nums[j-1] {
+            j--
+        }
+        j--
+    } else {
+        j--
+    }
+    return j
+}
 
 func twoSum(nums []int, startIdx int, target int) [][]int{
     n := len(nums)
@@ -36,24 +52,13 @@ func twoSum(nums []int, startIdx int, target int) [][]int{
     for i<j{
         if nums[i]+nums[j] == target {
             result = append(result, []int{i, j})
-            i++
-            for i+1 < n && nums[i+1] == nums[i] {
-                i++
-            }
-            j--
-            for j>0 && nums[j] == nums[j-1] {
-                j--
-            }
+            i = increase(i, nums)
+            j = decrease(j, nums)
         } else if nums[i]+nums[j] < target {
-            i++
-            for i+1 < n && nums[i+1] == nums[i] {
-                i++
-            }
+            i = increase(i, nums)
         } else {
-            j--
-            for j>0 && nums[j] == nums[j-1] {
-                j--
-            }
+            j = decrease(j, nums)
+            
         }
     }
     return result
