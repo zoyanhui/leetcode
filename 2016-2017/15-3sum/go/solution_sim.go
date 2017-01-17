@@ -6,11 +6,11 @@ func threeSum(nums []int) [][]int {
     }  
     var result [][]int
 	n := len(nums)
-	for k:=0; k<n; k++{
+	for k:=0; k<n-2; k++{
 		if k > 0 && nums[k] == nums[k-1] {
 			continue
 		}
-		target2 := target - nums[k]
+		target2 := 0 - nums[k]
 		i := k + 1
 		j := n - 1
 		for i < j {
@@ -24,10 +24,10 @@ func threeSum(nums []int) [][]int {
 			} else {
 				j--
 			}
-			for i<j && nums[i] == nums[i-1] {
+			for i<j && i > k+1 && nums[i] == nums[i-1] {
 				i++
 			}
-			for i<j && nums[j] == nums[j+1] {
+			for i<j && j+1<n && nums[j] == nums[j+1] {
 				j--
 			}
 		}

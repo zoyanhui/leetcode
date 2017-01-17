@@ -1,0 +1,11 @@
+"["
+"[](){}"
+"[{}()]"
+"([)]"
+
+output:
+
+false
+true
+true
+false
