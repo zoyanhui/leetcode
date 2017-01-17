@@ -34,7 +34,3 @@ func threeSum(nums []int) [][]int {
 	}
 	return result
 }
-
-func threeSumClosest(nums []int, target int) int[[] {
-
-}
