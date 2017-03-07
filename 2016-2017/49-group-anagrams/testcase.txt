@@ -1,0 +1,13 @@
+INPUT:
+```
+[""]
+["eat", "tea", "tan", "ate", "nat", "bat"]
+["tea","and","ace","ad","eat","dans"]
+```
+
+OUTPUT:
+```
+[[""]]
+[["bat"],["nat","tan"],["ate","eat","tea"]]
+[["eat","tea"],["and"],["dans"],["ace"],["ad"]]
+```
